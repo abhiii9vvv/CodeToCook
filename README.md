@@ -21,31 +21,61 @@ A responsive multi‑page restaurant website that fuses programming culture with
 ## Structure
 
 ```
-RestaurantMenu/
-├── About/              # About Us page
-├── Chef/               # Chef profiles
-├── Gallery/           # Photo gallery
-├── Menu/              # Restaurant menu
-├── images/            # Shared assets
-└── main-page/         # Home page
+CodeToCook/
+├── src/                  # Source files
+│   ├── About/           # About Us page
+│   ├── Chef/            # Chef profiles
+│   ├── Gallery/         # Photo gallery
+│   ├── Menu/            # Restaurant menu
+│   ├── images/          # Shared assets
+│   └── main-page/       # Home page
+├── .github/             # GitHub Actions
+├── index.html          # Entry point
+├── netlify.toml        # Netlify config
+└── vercel.json         # Vercel config
 ```
 
 ## Setup & Deployment
 
+### Quick Start
 1. Clone the repository:
    ```bash
    git clone https://github.com/abhiii9vvv/CodeToCook.git
    cd CodeToCook
    ```
 
-2. Development:
-   - Open `main-page/index.html` in a browser
-   - All images load from Unsplash or referenced sources
+2. Local Development:
+   ```bash
+   # Using Python
+   python -m http.server 3000
+   # OR using PHP
+   php -S localhost:3000
+   ```
 
-3. Deployment Options:
-   - GitHub Pages (recommended)
-   - Any static web host (Netlify, Vercel)
-   - Traditional web hosting
+3. Visit `http://localhost:3000`
+
+### Deployment Options
+
+#### Vercel
+1. Import to Vercel:
+   - Go to https://vercel.com
+   - New Project → Import Git Repository
+   - Select the repository
+   - Deploy
+
+#### Netlify
+1. Deploy on Netlify:
+   - Go to https://netlify.com
+   - Add new site → Import existing project
+   - Select the repository
+   - Deploy
+
+#### GitHub Pages
+1. Enable GitHub Pages:
+   - Go to repository Settings
+   - Pages → Build and deployment
+   - Source: "Deploy from a branch"
+   - Branch: "main" → Save
 
 ## Customization
 
