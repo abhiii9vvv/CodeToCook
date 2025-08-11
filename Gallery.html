@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeToCook Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <button class="theme-toggle" aria-label="Toggle dark/light theme"><i class="fas fa-moon"></i></button>
+    <header class="header" id="main-header">
+      <nav id="nav" aria-label="Main Navigation">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="Logo.png" alt="CodeToCook" id="imglogo" height="75" />
+          </a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="chef.html">Chefs</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="Gallery.html" class="active">Gallery</a></li>
+          <li><a href="index.html#contacts">Contacts</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="mobile-menu">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="chef.html">Chefs</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="Gallery.html" class="active">Gallery</a></li>
+            <li><a href="index.html#contacts">Contacts</a></li>
+          </ul>
+          <button class="close-btn" aria-label="Close menu">&times;</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container" id="main-div">
+      <section class="gallery-hero">
+        <h1>Food Gallery</h1>
+        <p>A curated visual journey of our signature dishes, seasonal specials, and kitchen creativity. Tap any image to view it larger.</p>
+      </section>
+
+      <div class="gallery-wrapper">
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Images populated via HTML (could be dynamic later) -->
+          <div class="gallery-item" data-title="Paneer Butter Masala">
+            <img src="https://images.unsplash.com/photo-1603899123225-287f2f55a158?auto=format&fit=crop&w=800&q=60" alt="Paneer Butter Masala" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Hyderabadi Biryani">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=60" alt="Hyderabadi Biryani" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Butter Chicken">
+            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=60" alt="Butter Chicken" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Garlic Naan">
+            <img src="https://images.unsplash.com/photo-1631452180338-d8d9cb6805ae?auto=format&fit=crop&w=800&q=60" alt="Garlic Naan" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Dal Makhani">
+            <img src="https://images.unsplash.com/photo-1668236543094-d09faf77a3d7?auto=format&fit=crop&w=800&q=60" alt="Dal Makhani" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Fusion Pizza">
+            <img src="https://images.unsplash.com/photo-1601924579440-022adee95fd0?auto=format&fit=crop&w=800&q=60" alt="Fusion Pizza" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Signature Dessert Bytes">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60" alt="Dessert Bytes" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Chef's Tasting Plate">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60" alt="Tasting Plate" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Seasonal Fresh Salad">
+            <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=60" alt="Fresh Salad" loading="lazy" />
+          </div>
+          <div class="gallery-item" data-title="Artisan Plated Dessert">
+            <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=800&q=60" alt="Plated Dessert" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <img src="../images/Logo.png" alt="CodeToCook Logo" class="footer-logo" />
+      <p>&copy; 2025 CodeToCook. All Rights Reserved.</p>
+      <p id="credits">Made By Abhinav</p>
+    </footer>
+  </div>
+
+  <!-- Lightbox structure -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close viewer">&times;</button>
+      <img id="lightboxImg" alt="Expanded food item" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    // Hamburger menu logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const body = document.body;
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-list li a');
+      const closeBtn = document.querySelector('.close-btn');
+
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
+      });
+
+      closeBtn.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          body.classList.remove('menu-open');
+        });
+      });
+    });
+
+    // Lightbox logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    document.getElementById('galleryGrid').addEventListener('click', (e) => {
+      const item = e.target.closest('.gallery-item');
+      if(!item) return;
+      const img = item.querySelector('img');
+      lightboxImg.src = img.src.replace(/w=800/, 'w=1200');
+      lightboxCaption.textContent = item.getAttribute('data-title');
+      lightbox.classList.add('active');
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightboxImg.removeAttribute('src');
+    }
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
+  </script>
+  <script>
+    (function(){
+      const btn = document.querySelector('.theme-toggle');
+      if(!btn) return; const icon = btn.querySelector('i');
+      const saved = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', saved); setIcon(saved);
+      btn.addEventListener('click', ()=>{const cur=document.documentElement.getAttribute('data-theme');const nxt=cur==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',nxt);localStorage.setItem('theme',nxt);setIcon(nxt);});
+      function setIcon(t){icon.className = t==='light'?'fas fa-moon':'fas fa-sun';}
+    })();
+  </script>
+</body>
+</html>

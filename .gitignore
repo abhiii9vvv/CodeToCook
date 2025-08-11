@@ -1,0 +1,33 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Development files
+.vscode/
+.idea/
+*.log
+*.swp
+
+# Distribution
+.dist/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Build outputs
+.next/
+.nuxt/
+.output/
+
+# Platform specific
+.vercel
+.netlify
+_site/
+.cache/

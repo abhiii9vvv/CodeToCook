@@ -1,0 +1,87 @@
+
+
+/* Menu page specific styles (globals moved to style.css) */
+
+/* Menu Page Styles */
+.container {
+  max-width: 1200px;
+  margin: 30px auto 40px; /* Reduced from 100px to 30px */
+  padding: 0 20px;
+  padding-top: 70px; /* Reduced from 120px to 70px */
+}
+
+h1 {text-align:center;color:var(--accent);margin-bottom:40px;font-size:3rem;letter-spacing:.5px;} 
+
+.menu-category {
+  margin-bottom: 50px;
+}
+
+ .menu-category h2 {color:var(--accent);font-size:2rem;margin-bottom:20px;text-align:center;position:relative;} 
+
+ .menu-category h2:after {content:"";display:block;width:80px;height:3px;background:var(--accent);margin:10px auto;} 
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+ .menu-item {background:var(--surface);border-radius:18px;overflow:hidden;width:330px;box-shadow:0 5px 22px -6px rgba(var(--shadow-color)/.18);transition:transform .45s,box-shadow .45s,background .6s;display:flex;flex-direction:column;border:1px solid var(--border);position:relative;} 
+ .menu-item:before {content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 25% 15%, rgba(255,255,255,.5), transparent 60%);opacity:.35;} 
+ .menu-item:hover {transform:translateY(-8px);box-shadow:0 14px 42px -12px rgba(var(--shadow-color)/.35);} 
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-item div {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+ .menu-item h3 {margin:0 0 10px;color:var(--accent);font-size:1.3rem;font-weight:600;} 
+
+ .menu-item p {margin:0 0 15px;color:var(--text-secondary);font-size:.95rem;line-height:1.5;flex-grow:1;} 
+
+ .price {font-weight:600;color:var(--accent);font-size:1.15rem;align-self:flex-end;letter-spacing:.5px;} 
+
+/* Footer styling */
+/* Footer uses global styling now */
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .nav-list {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  #nav {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .menu-category h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Dark theme refinement (menu page specific) */
+[data-theme="dark"] .menu-item {background:var(--surface);box-shadow:0 10px 38px -14px rgba(0,0,0,.65);} 
+[data-theme="dark"] .menu-item:hover {box-shadow:0 16px 48px -18px rgba(0,0,0,.75);} 
