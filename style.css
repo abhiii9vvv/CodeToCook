@@ -490,9 +490,15 @@ body {transition:background .45s ease,color .35s ease;}
 }
 
 /* Update media queries for mobile menu */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .hamburger {
     display: flex;
+    width: 40px;
+    height: 32px;
+  }
+  .hamburger span {
+    height: 5px;
+    border-radius: 4px;
   }
   .logo-container {
     justify-content: space-between;
@@ -506,11 +512,9 @@ body {transition:background .45s ease,color .35s ease;}
   .contact-container {
     flex-direction: column;
   }
-  
   .contact-form, .contact-info {
     min-width: 100%;
   }
-  
   body.menu-open {
     overflow: hidden;
   }
