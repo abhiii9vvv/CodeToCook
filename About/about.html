@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CodeToCook</title>
+    <link rel="stylesheet" href="../MAIN PAGE/style.css">
+    <link rel="stylesheet" href="styleAbout.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header" id="main-header">
+            <nav id="nav" aria-label="Main Navigation">
+                <div class="logo-container">
+                    <a href="../MAIN PAGE/index.html">
+                        <img src="../images/Logo.png" alt="CodeToCook Logo" id="imglogo" height="75">
+                    </a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="../MAIN PAGE/index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="../Chef/chef.html">Chefs</a></li>
+                    <li><a href="../Menu/menu.html">Menu</a></li>
+                    <li><a href="../Gallery/Gallery.html">Gallery</a></li>
+                    <li><a href="../MAIN PAGE/index.html#contacts">Contacts</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../MAIN PAGE/index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="../Chef/chef.html">Chefs</a></li>
+                <li><a href="../Menu/menu.html">Menu</a></li>
+                <li><a href="../Gallery/Gallery.html">Gallery</a></li>
+                <li><a href="../MAIN PAGE/index.html#contacts">Contacts</a></li>
+            </ul>
+        </div>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <img src="../images/AboutImg.png" alt="CodeToCook Interior" class="about-img">
+            <div class="about-text">
+                <h2>Welcome to CodeToCook</h2>
+                <p>
+                    At CodeToCook, we blend tradition and innovation to bring you a unique dining experience. Our chefs use the freshest ingredients to create mouth-watering dishes that delight your senses. Whether you're here for a family dinner or a special occasion, we promise a memorable meal every time.
+                </p>
+            </div>
+        </section>
+
+        <!-- Chef Section -->
+        <section class="chef-section">
+            <h2>Meet Our Chef</h2>
+            <div class="chef-profile">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Chef" class="chef-img">
+                <div>
+                    <h3>Chef Abhinav Tiwary</h3>
+                    <p>
+                        With over 20 years of culinary experience, Chef Abhinav brings passion and creativity to every plate. His signature dishes are inspired by global flavors and local ingredients, ensuring every meal is a masterpiece.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Gallery Section -->
+        <section class="food-gallery">
+            <h2>Our Specialties</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Butter Chicken">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Samosas">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Curry Dish">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Naan and Curry">
+            </div>
+        </section>
+
+        <footer id="footer">
+            <p>&copy; 2025 CodeToCook. All rights reserved.</p>
+            <p id="credits">Made By Abhinav</p>
+        </footer>
+    </div>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        const threshold = 30;
+
+        function onScroll() {
+            if (window.pageYOffset > threshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const body = document.body;
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-list li a');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+            
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

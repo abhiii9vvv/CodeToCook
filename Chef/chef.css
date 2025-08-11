@@ -1,0 +1,37 @@
+/* Chef Page Styles - derived from MAIN PAGE style.css */
+@import url('../MAIN PAGE/style.css');
+
+/* Override / additions specific to chefs */
+.chef-hero {text-align:center;margin:50px 0 70px;}
+.chef-hero h1{font-size:2.9rem;margin:0 0 14px;letter-spacing:1px;}
+.chef-hero p{max-width:760px;margin:0 auto;font-size:1.05rem;color:#5a4636;}
+
+.chef-grid-wrapper{max-width:1400px;margin:0 auto 90px;padding:0 24px;}
+.chef-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:30px;}
+
+.chef-card{background:rgba(255,255,255,0.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.4);border-radius:22px;padding:20px 20px 26px;position:relative;box-shadow:0 4px 20px rgba(0,0,0,.07);display:flex;flex-direction:column;transition:transform .4s, box-shadow .4s;overflow:hidden;}
+.chef-card:before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(145deg,rgba(255,255,255,.65),rgba(255,255,255,.2));opacity:.35;pointer-events:none;}
+.chef-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 12px 38px -6px rgba(0,0,0,.18);}
+
+.chef-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;box-shadow:0 6px 22px rgba(0,0,0,.18);margin-bottom:16px;}
+.chef-role{font-size:.78rem;letter-spacing:2px;font-weight:600;color:#ff9800;margin:2px 0 10px;text-transform:uppercase;}
+.chef-name{font-size:1.3rem;margin:0 0 6px;color:#3e2b1e;font-weight:700;}
+.chef-desc{font-size:.92rem;line-height:1.35rem;color:#524236;flex:1;margin:0 0 14px;}
+.chef-meta{display:flex;gap:14px;font-size:.7rem;letter-spacing:1px;opacity:.7;text-transform:uppercase;}
+
+.social-row{display:flex;gap:12px;margin-top:14px;}
+.social-row a{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ff9800;color:#fff;text-decoration:none;font-size:18px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.15);transition:background .3s, transform .3s;}
+.social-row a:hover{background:#ffac2b;transform:translateY(-4px);} 
+
+.tag-badge{position:absolute;top:12px;left:12px;background:#ff9800;color:#fff;padding:6px 12px;border-radius:40px;font-size:.65rem;letter-spacing:1px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.25);} 
+.badge-pastry{background:#ff6f61;}
+.badge-grill{background:#ff9800;}
+.badge-sous{background:#3fa16c;}
+.badge-rd{background:#6a5acd;}
+
+/* Responsive tweaks */
+@media (max-width:700px){
+  .chef-hero h1{font-size:2.3rem;}
+  .chef-grid{gap:22px;}
+  .chef-card{padding:18px 18px 24px;}
+}

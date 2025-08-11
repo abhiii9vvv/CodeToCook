@@ -1,0 +1,18 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Development files
+.vscode/
+.idea/
+*.log
+*.swp
+
+# Distribution
+.dist/
+dist/
+build/
+
+# Dependency directories
+node_modules/
+vendor/
