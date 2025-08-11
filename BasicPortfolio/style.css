@@ -1,0 +1,172 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+    color: #222;
+    min-height: 100vh;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-color: white;        /* Gives a clean look */
+    border: 2px solid #ccc;         /* Adds the visible border */
+    border-radius: 12px;            /* Optional: rounded corners */
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);  /* Optional: soft shadow */
+}
+
+
+.name {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #0073ff;
+    font-size: x-large;
+    padding: 18px 0 6px 0;
+    /* padding-bottom: */
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.details {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.details li {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+.details li i {
+    margin-right: 6px;
+    font-size: 1.1em;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.details li a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.details li a:hover i,
+.details li a:hover {
+    color: #0072b1;
+}
+
+#abt {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-top: 28px;
+    margin-bottom: 4px;
+    color: #0073ff;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 600px;
+    padding-bottom: 0;
+    position: relative;
+}
+
+#abt::after {
+    content: "";
+    display: block;
+    margin: 8px auto 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border-bottom: 2px solid #bbb;
+}
+#edu{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-top: 28px;
+    color: #0073ff;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 600px;
+    padding-bottom: 0;
+    position: relative;
+}
+#edu::after{
+    content: "";
+    display: block;
+    margin: 8px auto 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border-bottom: 2px solid #bbb;
+}
+
+
+.summary {
+    margin: 8px 0 20px 0;
+    padding: 0;
+    font-size: 0.98em;
+    line-height: 1.5;
+    max-width: 600px;
+    text-align: justify;
+    color: #444;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 16px 0 12px 0;
+    font-size: 0.95em;
+    color: #888;
+    background: none;
+    letter-spacing: 0.5px;
+}
+
+.edu-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0 0;
+    display: block;
+    text-align: center;
+}
+
+.edu-list li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px; /* space between details */
+}
+
+.edu-list li span {
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+}
+
+#TechSkills {
+    margin: 2px auto 0 auto;
+    padding: 2px 0 6px 0;
+    font-size: 1em;
+    color: #222;
+    max-width: 600px;
+    text-align:left;
+}
